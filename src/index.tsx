@@ -1,14 +1,9 @@
-import {Component, createElement, PropTypes} from 'rax';
+import {Component, createElement } from 'rax';
 import {isWeex, isWeb} from 'universal-env';
-import View from 'rax-view';
 import Text from 'rax-text';
 import Image from 'rax-image';
 
-class Icon extends Component {
-  static propTypes = {
-    fontFamily: PropTypes.string,
-    source: PropTypes.object
-  }
+class Icon extends Component<{}. {}> {
 
   componentWillMount() {
     if (!this.props.source.uri || this.props.source.codePoint) {

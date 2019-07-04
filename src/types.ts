@@ -16,7 +16,7 @@ export interface IconSource {
     /**
      * iconfont code point (iconfont的码点)
      */
-    codePoint: string
+    codePoint?: string
 }
 
 export interface IconProps extends BaseProps {
