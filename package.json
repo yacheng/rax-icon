@@ -11,8 +11,8 @@
     "start": "rax-scripts start --type 'component' -p 8000",
     "miniapp": "rax-scripts start --type 'component-miniapp'",
     "prepublishOnly": "npm run build",
-    "test": "npm run build && rax-scripts test",
-    "lint": "eslint --ext .js --ext .jsx --ext .ts --ext .tsx ./src"
+    "test": "rax-scripts test",
+    "lint": "eslint --ext .js --ext .jsx --ext .ts --ext .tsx ./src --fix"
   },
   "files": [
     "dist",
@@ -37,22 +37,22 @@
   "dependencies": {
     "rax-image": "^1.0.1-beta.1",
     "rax-text": "^1.0.1-beta.0",
-    "universal-env": "^0.6.6"
+    "universal-env": "^0.6.6",
+    "prop-types": "^15.7.2"
   },
   "peerDependencies": {
     "rax": "1.0.0"
   },
   "devDependencies": {
-    "rax-view": "^1.0.1-beta.8",
     "@rax-types/rax": "^1.0.5",
     "@types/ali-app": "^1.0.0",
     "@types/jest": "^24.0.12",
     "@typescript-eslint/eslint-plugin": "^1.7.0",
     "@typescript-eslint/parser": "^1.7.0",
     "csstype": "^2.6.4",
-    "eslint": "^5.16.0",
-    "driver-dom": "^1.0.0",
+    "driver-universal": "^1.0.0-beta.5",
     "driver-weex": "^1.0.0",
+    "eslint": "^5.16.0",
     "eslint-config-rax": "^0.0.0",
     "rax": "^1.0.0",
     "rax-scripts": "1.2.1",
