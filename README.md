@@ -1,81 +1,62 @@
-# Icon 
-
 [![npm](https://img.shields.io/npm/v/rax-icon.svg)](https://www.npmjs.com/package/rax-icon)
 
-Icon components to achieve the W3C standard IconFont interface.
+## 支持
 
-## Install
+Web / Weex
+
+## 描述
+
+图标组件，实现了 W3C 标准的 IconFont 接口。
+
+## 安装
 
 ```bash
 $ npm install rax-icon --save
 ```
 
-## Import
+## 属性
 
-```jsx
-import Icon, {createIconSet} from 'rax-icon';
-```
+1、**支持**列表中的 <img alt="browser" src="https://gw.alicdn.com/tfs/TB1uYFobGSs3KVjSZPiXXcsiVXa-200-200.svg" width="25px" height="25px" />代表h5 <img alt="weex" src="https://gw.alicdn.com/tfs/TB1jM0ebMaH3KVjSZFjXXcFWpXa-200-200.svg" width="25px" height="25px" />代表weex  <img alt="miniApp" src="https://gw.alicdn.com/tfs/TB1bBpmbRCw3KVjSZFuXXcAOpXa-200-200.svg" width="25px" height="25px" />代表小程序
 
-## Init
 
-use iconfont：
+| **属性**    | **类型**   | **默认值** | **必填** | **描述**           | **支持** |
+| ----------- | ---------- | ---------- | ------------ | ------------------ | ------------ |
+| source.uri     | `String` | -          |      是        | 图片型icon的url，如果出现，则font和codePoint两个属性失效 | <img alt="browser" src="https://gw.alicdn.com/tfs/TB1uYFobGSs3KVjSZPiXXcsiVXa-200-200.svg" width="25px" height="25px" /><img alt="weex" src="https://gw.alicdn.com/tfs/TB1jM0ebMaH3KVjSZFjXXcFWpXa-200-200.svg" width="25px" height="25px" />  |
+| fontFamily | `String` | -          |     是         | iconfont的字体         | <img alt="browser" src="https://gw.alicdn.com/tfs/TB1uYFobGSs3KVjSZPiXXcsiVXa-200-200.svg" width="25px" height="25px" /><img alt="weex" src="https://gw.alicdn.com/tfs/TB1jM0ebMaH3KVjSZFjXXcFWpXa-200-200.svg" width="25px" height="25px" />     |
+| source.codePoint     | `String` | -          |  是       |    iconfont的码点                     | <img alt="browser" src="https://gw.alicdn.com/tfs/TB1uYFobGSs3KVjSZPiXXcsiVXa-200-200.svg" width="25px" height="25px" /><img alt="weex" src="https://gw.alicdn.com/tfs/TB1jM0ebMaH3KVjSZFjXXcFWpXa-200-200.svg" width="25px" height="25px" />           |   
 
-```jsx
-<Icon style={{width: 100, height: 100}} fontFamily="iconfont" source={{uri: '//at.alicdn.com/t/font_pkm0oq8is8fo5hfr.ttf', codePoint: '\uE60f'}}/>
-```
+## 方法
 
-use image：
+### `IconComponent createIconSet(Object map, String name, String url);`
 
-```jsx
-<Icon style={{width: 100, height: 100}} source={{uri: icon}}/>
-```
+#### 参数
+| **属性** | **类型** | **默认值** | **必填** | **描述**            | 
+| -------- | -------- | ---------- | ------------ | ------------------- |
+| map  | `Object` | -          | 是           | 描述字符集映射，eg：{ hello: '\ue60f' }            | 
+| name | `String` | -       | 是        | 字体名称 | 
+| url | `String` | -       | 是       | 字体文件的 URL | 
 
-use createIconSet：
+#### 返回
 
-```jsx
-const IconFont = createIconSet({ hello: '\ue60f' }, 'iconfont', 'http://at.alicdn.com/t/font_pkm0oq8is8fo5hfr.ttf');
-<IconFont name={'hello'}/>
-```
+| **属性** | **类型** | **默认值** | **必填** | **描述**            | 
+| -------- | -------- | ---------- | ------------ | ------------------- |
+| name  | `String` | -          | 否           | 字符的名称            | 
+| codePoint | `String` | -       | 否        | iconfont 的码点 | 
 
-## API
+## 示例
 
-### Props
+[在线 Demo](https://jsplayground.taobao.org/raxplayground/51205b1c-72d4-4179-8034-4ff58e5a8c9e)
 
-| name      | type       | default  | describe   |
-| :--------------- | :----- | :--- | :------------------------------------- |
-| source.uri       | String | ''   | image type icon URL, if it occurs, then font and codePoint two attribute failure |
-| fontFamily       | String | ''   | iconfont font family                    |
-| source.codePoint | String | ''   | iconfont code point                      |
-
-### Function
-
-- **IconComponent createIconSet(Object map, String name, String url);**
-
-Parameter
-
-- map：Description character set mapping，eg：`{ hello: '\ue60f' }`
-- name：Font name，example `'iconfont'`
-- url: Font file URL
-
-IconComponent props
-
-| name      | type       | default  | describe   |
-| :-------- | :----- | :--- | :----------- |
-| name      | String | ''   | Font name        |
-| codePoint | String | ''   | iconfont code point |
-
-## Example
-
-```jsx
-// demo
+```js
 import { createElement, render, Component } from 'rax';
+import DU from 'driver-universal';
 import View from 'rax-view';
-import Icon, {createIconSet} from 'rax-icon';
+import Icon, { createIconSet } from '../src/index';
 
 const IconFont1 = createIconSet({}, 'iconfont', 'https://at.alicdn.com/t/font_pkm0oq8is8fo5hfr.ttf');
 const IconFont2 = createIconSet({
-    hello: '\uE60f'
-  }, 'iconfont', 'https://at.alicdn.com/t/font_pkm0oq8is8fo5hfr.ttf');
+  hello: '\uE60f'
+}, 'iconfont', 'https://at.alicdn.com/t/font_pkm0oq8is8fo5hfr.ttf');
 const icon = 'https://gw.alicdn.com/tfs/TB1KRRuQXXXXXbwapXXXXXXXXXX-200-200.png';
 
 class Demo extends Component {
@@ -91,6 +72,5 @@ class Demo extends Component {
   }
 }
 
-render(<Demo />);
+render(<Demo />, document.body, { driver: DU });
 ```
-
