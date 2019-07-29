@@ -44,9 +44,6 @@ $ npm install rax-icon --save
 | codePoint | `String` | -       | 否        | iconfont 的码点 | 
 
 ## 示例
-
-[在线 Demo](https://jsplayground.taobao.org/raxplayground/51205b1c-72d4-4179-8034-4ff58e5a8c9e)
-
 ```js
 import { createElement, render, Component } from 'rax';
 import DU from 'driver-universal';

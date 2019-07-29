@@ -1,6 +1,6 @@
 {
   "name": "rax-icon",
-  "version": "1.0.0-beta.0",
+  "version": "1.0.0",
   "description": "icon component for Rax.",
   "license": "BSD-3-Clause",
   "main": "lib/index.js",
@@ -35,8 +35,8 @@
     "npm": ">=3.0.0"
   },
   "dependencies": {
-    "rax-image": "^1.0.1-beta.1",
-    "rax-text": "^1.0.1-beta.0",
+    "rax-image": "^1.0.1",
+    "rax-text": "^1.0.1",
     "universal-env": "^1.0.0",
     "prop-types": "^15.7.2"
   },
@@ -50,7 +50,7 @@
     "@typescript-eslint/eslint-plugin": "^1.7.0",
     "@typescript-eslint/parser": "^1.7.0",
     "csstype": "^2.6.4",
-    "driver-universal": "^1.0.0-beta.5",
+    "driver-universal": "^1.0.0",
     "driver-weex": "^1.0.0",
     "eslint": "^5.16.0",
     "eslint-config-rax": "^0.0.0",
