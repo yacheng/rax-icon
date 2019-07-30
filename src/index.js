@@ -1,8 +1,8 @@
-import {Component, createElement, PropTypes} from 'rax';
+import {Component, createElement} from 'rax';
 import {isWeex, isWeb} from 'universal-env';
-import View from 'rax-view';
 import Text from 'rax-text';
 import Image from 'rax-image';
+import PropTypes from 'prop-types';
 
 class Icon extends Component {
   static propTypes = {

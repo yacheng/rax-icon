@@ -3,7 +3,5 @@ lib
 dist
 build
 coverage
-expected
-website
-gh-pages
-weex
+*.d.ts
+__templates__
