@@ -1,12 +1,12 @@
-import { createElement, FunctionComponent } from "rax";
-import { isWeex, isWeb } from "universal-env";
-import Text from "rax-text";
+import { createElement, FunctionComponent } from 'rax';
+import { isWeex, isWeb } from 'universal-env';
+import Text from 'rax-text';
 
 let domModule = null;
 try {
-  domModule = require("@weex-module/dom");
+  domModule = require('@weex-module/dom');
 } catch (error) {
-  console.log("require @weex-module/dom error");
+  console.log('require @weex-module/dom error');
 }
 
 const fontCache = new Map();
@@ -34,7 +34,7 @@ const Icon: FunctionComponent<IconProps> = ({
       if (window.FontFace) {
         // @ts-ignore
         const FontFace = window.FontFace;
-        const iconfont = new FontFace(fontFamily, "url(" + uri + ")");
+        const iconfont = new FontFace(fontFamily, 'url(' + uri + ')');
         // @ts-ignore
         document.fonts.add(iconfont);
         // @ts-ignore
@@ -44,8 +44,8 @@ const Icon: FunctionComponent<IconProps> = ({
             font-family: ${fontFamily};
           }`;
         // Create stylesheet
-        const style = document.createElement("style");
-        style.type = "text/css";
+        const style = document.createElement('style');
+        style.type = 'text/css';
         // @ts-ignore
         if (style.styleSheet) {
           // @ts-ignore
@@ -56,7 +56,7 @@ const Icon: FunctionComponent<IconProps> = ({
         document.head.appendChild(style);
       }
     } else if (isWeex) {
-      domModule.addRule("fontFace", {
+      domModule.addRule('fontFace', {
         fontFamily,
         src: "url('" + uri + "')" // single quotes are required around uri, and double quotes can not work
       });
