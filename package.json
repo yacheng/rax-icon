@@ -36,9 +36,9 @@
   },
   "dependencies": {
     "rax-image": "^1.0.1",
+    "rax-proptypes": "^1.0.0",
     "rax-text": "^1.0.1",
-    "universal-env": "^1.0.0",
-    "prop-types": "^15.7.2"
+    "universal-env": "^1.0.0"
   },
   "peerDependencies": {
     "rax": "^1.0.0"
