@@ -26,7 +26,8 @@ const Icon: FunctionComponent<IconProps> = ({
   size = 12,
   color
 }) => {
-  if (!fontCache.get(fontFamily)) {
+  const fontFile = fontCache.get(fontFamily);
+  if (!fontFile) {
     fontCache.set(fontFamily, uri);
     if (isWeb) {
       // @ts-ignore
@@ -60,6 +61,9 @@ const Icon: FunctionComponent<IconProps> = ({
         src: "url('" + uri + "')" // single quotes are required around uri, and double quotes can not work
       });
     }
+  } else if (fontFile !== uri) {
+    console.error(`font-family ${fontFamily} should be unique!`);
+    return null;
   }
   return <Text style={{ fontSize: size, fontFamily, color }}>{codePoint}</Text>;
 };
