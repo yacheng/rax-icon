@@ -30,14 +30,10 @@ const Icon: FunctionComponent<IconProps> = ({
   if (!fontFile) {
     fontCache.set(fontFamily, uri);
     if (isWeb) {
-      // @ts-ignore
       if (window.FontFace) {
-        // @ts-ignore
         const FontFace = window.FontFace;
         const iconfont = new FontFace(fontFamily, 'url(' + uri + ')');
-        // @ts-ignore
         document.fonts.add(iconfont);
-        // @ts-ignore
       } else {
         const iconFontStyles = `@font-face {
             src: url(${uri});
@@ -46,9 +42,7 @@ const Icon: FunctionComponent<IconProps> = ({
         // Create stylesheet
         const style = document.createElement('style');
         style.type = 'text/css';
-        // @ts-ignore
         if (style.styleSheet) {
-          // @ts-ignore
           style.styleSheet.cssText = iconFontStyles;
         } else {
           style.appendChild(document.createTextNode(iconFontStyles));
