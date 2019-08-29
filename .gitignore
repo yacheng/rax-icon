@@ -10,3 +10,4 @@ build/
 dist/
 lib/
 _miniapp
+yarn.lock
