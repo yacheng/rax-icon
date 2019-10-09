@@ -33,15 +33,15 @@ try {
 } catch (error) {
   console.log("require @weex-module/dom error");
 }
-const fontCache = new Map();
+const fontCache = {};
 const Icon: ForwardRefExoticComponent<IconProps> = forwardRef(
   ({ source: { uri, codePoint }, fontFamily, style = {}, ...rest }, ref) => {
     if (uri && !codePoint) {
       return <Image source={{ uri }} style={style} />;
     }
-    const fontFile = fontCache.get(fontFamily);
+    const fontFile = fontCache[fontFamily];
     if (!fontFile) {
-      fontCache.set(fontFamily, uri);
+      fontCache[fontFamily] = uri;
       if (isWeb) {
         if (FontFace) {
           const iconfont = new FontFace(fontFamily, "url(" + uri + ")");
