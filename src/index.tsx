@@ -9,7 +9,6 @@ import { isWeex, isWeb } from "universal-env";
 import Text from "rax-text";
 import Image from "rax-image";
 
-declare const FontFace: any;
 declare const __weex_require__: any;
 export interface IconProps
   extends RefAttributes<HTMLSpanElement>,
@@ -43,6 +42,8 @@ const Icon: ForwardRefExoticComponent<IconProps> = forwardRef(
     if (!fontFile) {
       fontCache[fontFamily] = uri;
       if (isWeb) {
+        // @ts-ignore
+        const FontFace = window.FontFace;
         if (FontFace) {
           const iconfont = new FontFace(fontFamily, "url(" + uri + ")");
           document.fonts.add(iconfont);
